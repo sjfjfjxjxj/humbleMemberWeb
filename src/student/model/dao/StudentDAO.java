@@ -88,5 +88,52 @@ public class StudentDAO {
 		}
 		return student;
 	}
+	public int updateStudent(Connection conn, Student student) {
+		int result = 0;
+		String sql ="UPDATE STUDENT_TBL SET ST_PW=?, ST_NAME=?, ST_EMAIL=?, ST_PHONE=?, ST_ADDR=?, ST_GENDER=? WHERE ST_ID=?";
+		try {
+			PreparedStatement pstmt;
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, student.getStudentPw());
+			pstmt.setString(2, student.getStudentName());
+			pstmt.setString(3, student.getStudentEmail());
+			pstmt.setString(4, student.getStudentPhone());
+			pstmt.setString(5, student.getStudentAddress());
+			pstmt.setString(6, student.getStudentGender());
+			pstmt.setString(7, student.getStudentId());
+			result = pstmt.executeUpdate();
+			pstmt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+	public int deleteStudent(Connection conn, String studentId) {
+		String sql="DELETE FROM STUDENT_TBL WHERE ST_ID=?";
+		int result = 0;
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, studentId);
+			result = pstmt.executeUpdate();
+			pstmt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

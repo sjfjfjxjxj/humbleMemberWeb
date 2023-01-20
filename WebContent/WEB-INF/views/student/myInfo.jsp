@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +11,13 @@
 <body>
  <h1>학생 상세 정보 페이지</h1>
     <div>
-        <form action="">
+        <form action="/student/update.do" method="post">
             <fieldset>
                 <legend>학생정보</legend>
                 <ul id="student-register">
                     <li>
                         <label for="">아이디</label>
-                        <input type="text" name="student-id" value="${student.studentId}">
+                        <input type="text" name="student-id" value="${student.studentId}" readonly>
                     </li>
                     <li>
                         <label for="">비밀번호</label>

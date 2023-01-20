@@ -45,8 +45,8 @@
 					</li>
 					<li>
 						<label for="member-gender">성별</label>
-						<label for="member-male">남<input type="radio" id="member-male" name="member-gender" value="M"></label>
-						<label for="member-female">여<input type="radio" id="member-female" name="member-gender" value="F"></label>
+						<label for="member-male">남<input type="radio" id="member-male" name="member-gender" value="M"></label> <!-- ↓체크드해놓으면 기본값으로 체크돼있음 -->
+						<label for="member-female">여<input type="radio" id="member-female" name="member-gender" value="F" checked="checked"></label>
 					</li><br>
 					<li>
 						<label for="member-hobby">취미</label>

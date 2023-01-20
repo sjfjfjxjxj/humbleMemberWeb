@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import student.model.service.StudentService;
 import student.model.vo.Student;
@@ -42,8 +43,11 @@ public class StudentLoginServlet extends HttpServlet {
 		StudentService stdService = new StudentService();
 		Student sOne = stdService.selectCheckLogin(student);
 		if(sOne != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("studentId", studentId);
+			response.sendRedirect("/login1.jsp");
 			//성공
-			request.getRequestDispatcher("/WEB-INF/views/student/loginSuccess.jsp").forward(request, response);
+			//request.getRequestDispatcher("/WEB-INF/views/student/loginSuccess.jsp").forward(request, response);
 		}else {
 			//실패
 			request.setAttribute("title", "로그인실패...");

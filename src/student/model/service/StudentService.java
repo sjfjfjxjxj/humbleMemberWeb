@@ -39,5 +39,32 @@ public class StudentService {
 		student = stdDao.selectOneById(conn, studentId);
 		return student;
 	}
+	/**
+	 * 정보수정
+	 * @param student
+	 * @return
+	 */
+	public int updateStudent(Student student) {
+		int result = 0;
+		Connection conn = JDBCTemplate.getConnection();
+		result = stdDao.updateStudent(conn, student);
+		if(result>0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		return result;
+	}
+	public int deleteStudent(String studentId) {
+		int result = 0;
+		Connection conn = JDBCTemplate.getConnection();
+		result = stdDao.deleteStudent(conn, studentId);
+		if(result>0) {
+			JDBCTemplate.commit(conn);
+		}else {
+			JDBCTemplate.rollback(conn);
+		}
+		return result;
+	}
 
 }

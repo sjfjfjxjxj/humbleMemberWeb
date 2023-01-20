@@ -14,6 +14,18 @@ public class Student {
 	
 	public Student() {}
 	
+	public Student(String studentId, String studentPw, String studentName, String studentEmail, String studentPhone,
+			String studentAddress, String studentGender) {
+		super();
+		this.studentId = studentId;
+		this.studentPw = studentPw;
+		this.studentName = studentName;
+		this.studentEmail = studentEmail;
+		this.studentPhone = studentPhone;
+		this.studentAddress = studentAddress;
+		this.studentGender = studentGender;
+	}
+
 	public Student(String studentId, String studentPw) {
 		this.studentId = studentId;
 		this.studentPw = studentPw;

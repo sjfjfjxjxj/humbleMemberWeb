@@ -13,7 +13,7 @@ import student.model.vo.Student;
 /**
  * Servlet implementation class StudentMyInfo
  */
-@WebServlet("/student/myinfo.do")
+@WebServlet("/student/myInfo.do")
 public class StudentMyInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,7 +34,7 @@ public class StudentMyInfo extends HttpServlet {
 			StudentService sService = new StudentService();
 			Student student = sService.printOneById(studentId);
 			request.setAttribute("student", student);
-			request.getRequestDispatcher("/WEB-INF/views/student/myinfo.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/student/myInfo.jsp").forward(request, response);
 		}else {
 			request.setAttribute("title", "아이디 조회 실패");
 			request.setAttribute("msg", "해당데이터 없음...");
