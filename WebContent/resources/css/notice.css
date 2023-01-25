@@ -1,0 +1,42 @@
+ul{
+	list-style-type: none;
+	padding-left: 0px;
+}
+ul li label{
+	width : 80px;
+	text-align: left;
+	float : left;
+}
+li{
+	margin: 10px;
+}
+
+.btn-area{
+	display: flex;
+	justify-content: space-evenly;
+}
+.btn-area > input{
+	margin-top: 8px;
+	width : 150px;
+	height: 40px;
+	text-align: center;
+	border: 1px solid #ccc;
+	background-color: #fafafa;
+	box-shadow: 1px 1px 1px #ccc;
+}
+/*테이블스타일*/
+table{
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	
+}
+th,td{
+	border: 1px solid black;
+}
+
+
+
+
+
+

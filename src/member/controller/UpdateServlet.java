@@ -46,7 +46,7 @@ public class UpdateServlet extends HttpServlet {
 			//실패 에러페이지
 			request.setAttribute("title", "정보수정실패");
 			request.setAttribute("msg", "정보 수정 완료 안됐엄");
-			request.getRequestDispatcher("/WEB-INF/views/member/error.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
 		}
 		
 	}

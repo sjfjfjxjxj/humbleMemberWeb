@@ -36,7 +36,7 @@ public class RemoveServlet extends HttpServlet {
 		}else {
 			request.setAttribute("title", "삭제실패");
 			request.setAttribute("msg", "다시혀");
-			request.getRequestDispatcher("/WEB-INF/views/member/error.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
 		}
 		
 	}
