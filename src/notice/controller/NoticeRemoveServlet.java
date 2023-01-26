@@ -1,4 +1,4 @@
-package member.controller;
+package notice.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.model.service.MemberService;
-//http://127.0.0.1:8888/member/remove.kh?member-id=khuser01
+import notice.model.service.NoticeService;
+
 /**
- * Servlet implementation class RemoveServlet
+ * Servlet implementation class NoticeRemoveServlet
  */
-@WebServlet("/member/remove.kh")
-public class RemoveServlet extends HttpServlet {
+@WebServlet("/notice/remove")
+public class NoticeRemoveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RemoveServlet() {
+    public NoticeRemoveServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,17 +28,17 @@ public class RemoveServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String memberId = request.getParameter("member-id");
-		MemberService mService = new MemberService();
-		int result = mService.deleteMember(memberId);
+		String noticeId = request.getParameter("notice-no") != null? request.getParameter("notice-no"):"0";
+		int noticeNo = Integer.parseInt(noticeId);
+		NoticeService nService = new NoticeService();
+		int result = nService.deleteNotice(noticeNo);
 		if(result>0) {
-			response.sendRedirect("/index.jsp"); //여기 바꿔야혀...
+			response.sendRedirect("/notice/list");
 		}else {
-			request.setAttribute("title", "삭제실패");
-			request.setAttribute("msg", "다시혀");
+			request.setAttribute("title", "공지사항 삭제 실패");
+			request.setAttribute("msg", "삭제되지 않았어요");
 			request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
 		}
-		
 	}
 
 }

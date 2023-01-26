@@ -34,7 +34,7 @@ pageEncoding="UTF-8"%>
             <c:forEach items="${nList}" var="notice">
                 <tr>
                     <td>${notice.noticeNo}</td>
-                    <td>${notice.noticeSubject}</td>
+                    <td><a href="/notice/detail?notice-no=${notice.noticeNo }">${notice.noticeSubject}</a></td>
                     <td>${notice.noticeWriter}</td>
                     <td>${notice.noticeDate}</td>
                     <td>${notice.viewCount}</td>
