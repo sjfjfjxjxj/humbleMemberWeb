@@ -40,6 +40,15 @@ pageEncoding="UTF-8"%>
                     <td>${notice.viewCount}</td>
                 </tr>
             </c:forEach>    
+            <tr>
+            	<td colspan = "5">
+            		${pageNavi }
+<!--             		<a href="notice/list?page=1">1</a> -->
+<!--             		<a href="notice/list?page=2">2</a> -->
+<!--             		<a href="notice/list?page=3">3</a> -->
+<!--             		<a href="notice/list?page=4">4</a> -->
+<!--             		<a href="notice/list?page=5">5</a> -->
+            </tr>
         </tbody>
     </table>
 </body>

@@ -34,7 +34,7 @@
             </li>
         </ul>
         <a href="/notice/list">목록으로 이동</a>
-        <a href="#">수정하기</a>
+        <a href="/notice/modify?notice-no=${notice.noticeNo }">수정하기</a>
         <a href="javascript:void(0)" onclick="deleteCheck();">삭제하기</a>
         <!--#은 동작하고있어서 페이지 맨위로 가고 보이드영 하면 동작 안해서 가만히 머무름-->
         
